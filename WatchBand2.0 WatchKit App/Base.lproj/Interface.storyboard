@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="9515"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="WatchBand2_0_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <imageView alignment="left" image="WB2" id="foS-fN-QJr"/>
+                    </items>
+                    <connections>
+                        <segue destination="3iF-j2-2Bh" kind="relationship" relationship="nextPage" id="3Bh-dc-MSP"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="148" y="323"/>
+        </scene>
+        <!--Instrument Interface Controller-->
+        <scene sceneID="Tkv-o1-hua">
+            <objects>
+                <controller id="3iF-j2-2Bh" customClass="InstrumentInterfaceController" customModule="WatchBand2_0_WatchKit_Extension">
+                    <items>
+                        <button width="1" alignment="left" verticalAlignment="center" title="Guitar" id="DwM-j1-maC">
+                            <connections>
+                                <action selector="setGuitarText" destination="3iF-j2-2Bh" id="hwF-Ux-ZW1"/>
+                            </connections>
+                        </button>
+                        <button width="1" alignment="left" verticalAlignment="center" title="Bass" id="vKH-Uf-vdI">
+                            <connections>
+                                <action selector="setBassText" destination="3iF-j2-2Bh" id="3Gx-FM-3UZ"/>
+                            </connections>
+                        </button>
+                        <button width="1" alignment="left" verticalAlignment="center" title="Drums" id="SPA-YX-eCo">
+                            <connections>
+                                <action selector="setDrumsText" destination="3iF-j2-2Bh" id="6uq-Hh-PRt"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="bassButton" destination="vKH-Uf-vdI" id="dSM-Ia-X78"/>
+                        <outlet property="drumsButton" destination="SPA-YX-eCo" id="MVK-Bf-xL3"/>
+                        <outlet property="guitarButton" destination="DwM-j1-maC" id="FkP-LJ-wft"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="420" y="323"/>
+        </scene>
+        <!--Static Notification Interface Controller-->
+        <scene sceneID="AEw-b0-oYE">
+            <objects>
+                <notificationController id="YCC-NB-fut">
+                    <items>
+                        <label alignment="left" text="Alert Label" id="IdU-wH-bcW"/>
+                    </items>
+                    <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf"/>
+                    <connections>
+                        <outlet property="notificationAlertLabel" destination="IdU-wH-bcW" id="JKC-fr-R95"/>
+                        <segue destination="4sK-HA-Art" kind="relationship" relationship="dynamicNotificationInterface" id="kXh-Jw-8B1"/>
+                    </connections>
+                </notificationController>
+            </objects>
+            <point key="canvasLocation" x="220" y="643"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="ZPc-GJ-vnh">
+            <objects>
+                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="WatchBand2_0_WatchKit_App" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="468" y="643"/>
+        </scene>
+    </scenes>
+</document>
